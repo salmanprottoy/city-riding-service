@@ -8,9 +8,9 @@ const Header = () => {
   const [loggerInUser, setLoggedInUser] = useContext(UserContext);
   return (
     <div className="">
-      <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
+      <Navbar collapseOnSelect expand="lg" bg="info" variant="dark">
         <Navbar.Brand>
-          <Link className="nav-link" to="/">
+          <Link className="nav-link text-white" to="/">
             City Riding Service
           </Link>
         </Navbar.Brand>

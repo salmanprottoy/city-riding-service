@@ -35,12 +35,12 @@ const Destination = () => {
             <div className="form-group">
               <label>Pick From</label>
               <br />
-              <input type="text" style={{ width: "20rem" }} />
+              <input type="text" style={{ width: "20rem" }} required />
             </div>
             <div className="form-group">
               <label>Pick To</label>
               <br />
-              <input type="text" style={{ width: "20rem" }} />
+              <input type="text" style={{ width: "20rem" }} required />
             </div>
             <div>
               <button

@@ -11,6 +11,7 @@ import { createContext } from "react";
 import { useState } from "react";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import Footer from "./components/Footer/Footer";
+import Signup from "./components/Signup/Signup";
 
 export const UserContext = createContext();
 
@@ -45,6 +46,11 @@ function App() {
             <Route path="/login">
               <Header />
               <Login />
+              <Footer />
+            </Route>
+            <Route path="/signup">
+              <Header />
+              <Signup />
               <Footer />
             </Route>
             <Route path="*">

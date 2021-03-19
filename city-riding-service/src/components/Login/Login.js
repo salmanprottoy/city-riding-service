@@ -7,6 +7,7 @@ import { UserContext } from "../../App";
 import { useHistory, useLocation } from "react-router";
 import { faGoogle, faFacebook } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const [loggerInUser, setLoggedInUser] = useContext(UserContext);
@@ -60,16 +61,24 @@ const Login = () => {
   return (
     <div className="login">
       <div className="container" style={{ width: "30rem" }}>
-        <form action="" className="border border-dark p-3 m-5 rounded">
-          <h3 className="text-center">Login</h3>
+        <form action="" className="border border-info p-3 m-5 rounded">
+          <h3 className="text-center text-info">Login</h3>
           <div className="form-group">
-            <input type="text" placeholder="Email" style={{ width: "18rem" }} />
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              style={{ width: "18rem" }}
+              required
+            />
           </div>
           <div className="form-group">
             <input
               type="password"
+              name="password"
               placeholder="Password"
               style={{ width: "18rem" }}
+              required
             />
           </div>
           <div className="form-check">
@@ -84,11 +93,14 @@ const Login = () => {
           </div>
           <button
             type="submit"
-            className="btn btn-primary m-2"
+            className="btn btn-info m-2"
             style={{ width: "18rem" }}
           >
             Login
           </button>
+          <small>
+            Don't have an account? <Link to="/signup"> click here </Link>{" "}
+          </small>
         </form>
       </div>
       <hr />
