@@ -1,11 +1,7 @@
-import React from 'react';
+import React from "react";
 
 const Contact = () => {
-    return (
-        <div>
-            <h1>This is a contact</h1>
-        </div>
-    );
+  return <div></div>;
 };
 
 export default Contact;

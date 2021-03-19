@@ -1,17 +1,6 @@
-/* html {
-  background: url(./img/Bg.png) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-} */
 .App {
   text-align: center;
-  background: url("./img/Bg.png") ;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
+  background-color: rgb(157, 244, 255);
 }
 
 .App-logo {

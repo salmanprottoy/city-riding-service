@@ -5,6 +5,8 @@ import firebaseConfig from "./firebase.config";
 import { useContext } from "react";
 import { UserContext } from "../../App";
 import { useHistory, useLocation } from "react-router";
+import { faGoogle, faFacebook } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Login = () => {
   const [loggerInUser, setLoggedInUser] = useContext(UserContext);
@@ -80,11 +82,11 @@ const Login = () => {
       <hr />
       <div>
         <button className="btn btn-success m-1" onClick={handleGoogleSignIn}>
-          Login with Google
+          <FontAwesomeIcon icon={faGoogle} /> Connect with Google
         </button>
         <br />
         <button className="btn btn-primary m-1" onClick={handleFacebookSignIn}>
-          Login with Facebook
+          <FontAwesomeIcon icon={faFacebook} /> Connect with Facebook
         </button>
       </div>
     </div>
