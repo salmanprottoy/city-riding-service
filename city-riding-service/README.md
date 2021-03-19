@@ -1,18 +1,18 @@
 # City Riding Service 
 
-A react project.
+A react project for ride sharing
 
 ---
 ## Live site ⚡
 
-[City Riding Service]()
+[City Riding Service](https://city-riding-service.web.app/)
 
 ## Features ✔
 
-- #### 1
+- #### 
 
 
-- #### 2
+- #### 
 
 
 ##
