@@ -1,12 +1,15 @@
-import React from 'react';
-import Navigationbar from '../Navigationbar/Navigationbar';
+import React from "react";
+import Header from "../Header/Header";
+import Transports from "../Transports/Transports";
+import "./Home.css";
 
 const Home = () => {
-    return (
-        <div>
-            <Navigationbar></Navigationbar>
-        </div>
-    );
+  return (
+    <div className="home">
+      <Header />
+      <Transports />
+    </div>
+  );
 };
 
 export default Home;

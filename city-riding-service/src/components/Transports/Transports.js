@@ -1,11 +1,21 @@
-import React from 'react';
+import React from "react";
+import Transport from "../Transport/Transport";
+import bike from "../../img/bike.png";
+import car from "../../img/car.png";
+import bus from "../../img/bus.png";
+import train from "../../img/train.png";
 
 const Transports = () => {
-    return (
-        <div>
-            <h1>this is a transport</h1>
-        </div>
-    );
+  return (
+    <div className="transports mt-5 ml-5 mr-5">
+      <div className="row row-cols-md-4 g-3 justify-content-center mt-2">
+        <Transport title={"Bike"} img={bike}></Transport>
+        <Transport title={"Car"} img={car}></Transport>
+        <Transport title={"Bus"} img={bus}></Transport>
+        <Transport title={"Train"} img={train}></Transport>
+      </div>
+    </div>
+  );
 };
 
 export default Transports;
