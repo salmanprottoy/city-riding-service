@@ -7,8 +7,8 @@ import train from "../../img/train.png";
 
 const Transports = () => {
   return (
-    <div className="transports ml-5 mr-5">
-      <div className="row row-cols-md-4 justify-content-center mt-5 p-3">
+    <div className="transports m-5">
+      <div className="row row-cols-md-4 justify-content-center p-5">
         <Transport title={"Bike"} img={bike}></Transport>
         <Transport title={"Car"} img={car}></Transport>
         <Transport title={"Bus"} img={bus}></Transport>
