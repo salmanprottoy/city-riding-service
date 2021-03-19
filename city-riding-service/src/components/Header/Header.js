@@ -1,50 +1,43 @@
 import React from "react";
 import { useContext } from "react";
+import { Nav, Navbar, NavDropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { UserContext } from "../../App";
 
 const Header = () => {
   const [loggerInUser, setLoggedInUser] = useContext(UserContext);
   return (
-    <div className="container">
-      <nav className="navbar navbar-expand-lg navbar-light">
-        <Link className="navbar-brand " to="/">
-          City Riding Service
-        </Link>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav">
-            <li className="nav-item active">
+    <div className="">
+      <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
+        <Navbar.Brand>
+          <Link className="nav-link" to="/">
+            City Riding Service
+          </Link>
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="mr-auto">
+            <Nav.Link href="#features">
               <Link className="nav-link" to="/home">
                 Home
               </Link>
-            </li>
-            <li className="nav-item">
+            </Nav.Link>
+            <Nav.Link href="#pricing">
               <Link class="nav-link" to="/destination">
                 Destination
               </Link>
-            </li>
-            <li className="nav-item">
+            </Nav.Link>
+            <Nav.Link href="#features">
               <Link className="nav-link" to="/blog">
                 Blog
               </Link>
-            </li>
-            <li className="nav-item">
+            </Nav.Link>
+            <Nav.Link href="#pricing">
               <Link className="nav-link" to="/contact">
                 Contact
               </Link>
-            </li>
-            <li className="nav-item">
+            </Nav.Link>
+            <Nav.Link href="#pricing">
               {loggerInUser.name ? (
                 <Link className="nav-link" to="/">
                   {loggerInUser.name}
@@ -54,10 +47,50 @@ const Header = () => {
                   Login
                 </Link>
               )}
-            </li>
-          </ul>
-        </div>
-      </nav>
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
+      {/* <Navbar bg="light" variant="light">
+        <Navbar.Brand>
+          <Link className="nav-link" to="/">
+            City Riding Service
+          </Link>
+        </Navbar.Brand>
+        <Nav className="mr-auto">
+          <Nav.Link>
+            <Link className="nav-link" to="/home">
+              Home
+            </Link>
+          </Nav.Link>
+          <Nav.Link href="">
+            <Link class="nav-link" to="/destination">
+              Destination
+            </Link>
+          </Nav.Link>
+          <Nav.Link href="">
+            <Link className="nav-link" to="/blog">
+              Blog
+            </Link>
+          </Nav.Link>
+          <Nav.Link href="">
+            <Link className="nav-link" to="/contact">
+              Contact
+            </Link>
+          </Nav.Link>
+          <Nav.Link href="">
+            {loggerInUser.name ? (
+              <Link className="nav-link" to="/">
+                {loggerInUser.name}
+              </Link>
+            ) : (
+              <Link className="nav-link" to="/login">
+                Login
+              </Link>
+            )}
+          </Nav.Link>
+        </Nav>
+      </Navbar> */}
     </div>
   );
 };

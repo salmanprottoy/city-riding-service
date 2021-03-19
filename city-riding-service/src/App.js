@@ -23,11 +23,9 @@ function App() {
           <Switch>
             <Route exact path="/">
               <Home />
-              <Footer />
             </Route>
             <Route path="/home">
               <Home />
-              <Footer />
             </Route>
             <PrivateRoute path="/destination">
               <Header />
