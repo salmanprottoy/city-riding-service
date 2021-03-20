@@ -31,27 +31,25 @@ const Destination = () => {
     <div className="container">
       <div className="row d-flex justify-content-between align-items-center m-5 rounded">
         <div className="map-selector p-4 col-md-6 text-left">
-          <form action="">
-            <div className="form-group">
-              <label>Pick From</label>
-              <br />
-              <input type="text" style={{ width: "20rem" }} required />
-            </div>
-            <div className="form-group">
-              <label>Pick To</label>
-              <br />
-              <input type="text" style={{ width: "20rem" }} required />
-            </div>
-            <div>
-              <button
-                type="submit"
-                className="btn btn-info"
-                style={{ width: "20rem" }}
-              >
-                Search
-              </button>
-            </div>
-          </form>
+          <div className="form-group">
+            <label>Pick From</label>
+            <br />
+            <input type="text" style={{ width: "20rem" }} required />
+          </div>
+          <div className="form-group">
+            <label>Pick To</label>
+            <br />
+            <input type="text" style={{ width: "20rem" }} required />
+          </div>
+          <div>
+            <button
+              type="submit"
+              className="btn btn-info"
+              style={{ width: "20rem" }}
+            >
+              Search
+            </button>
+          </div>
         </div>
         <div className="map-area p-4 col-md-6">
           {isLoaded ? (
