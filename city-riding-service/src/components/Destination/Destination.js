@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { GoogleMap, useJsApiLoader } from "@react-google-maps/api";
+import data from "../../data/data.json";
+import FareInfo from "../FareInfo/FareInfo";
 
 const containerStyle = {
   width: "90vh",
-  height: "50vh",
+  height: "85vh",
 };
 const center = {
   lat: 22.418944172990752,
@@ -11,6 +13,17 @@ const center = {
 };
 
 const Destination = () => {
+  let showFareInfo = false;
+  const [transports, setTransports] = useState([]);
+  useEffect(() => {
+    setTransports(data);
+  }, []);
+
+  const handleSearch = () => {
+    console.log("Searching");
+    showFareInfo = true;
+  };
+
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
     googleMapsApiKey: "AIzaSyCYX2VlJG3NntaJymDTWGa5w-n6l1X_qwE",
@@ -27,6 +40,7 @@ const Destination = () => {
   const onUnmount = React.useCallback(function callback(map) {
     setMap(null);
   }, []);
+
   return (
     <div className="container">
       <div className="row d-flex justify-content-between align-items-center m-5 rounded">
@@ -43,12 +57,17 @@ const Destination = () => {
           </div>
           <div>
             <button
-              type="submit"
               className="btn btn-info"
               style={{ width: "20rem" }}
+              onClick={handleSearch}
             >
               Search
             </button>
+          </div>
+          <div>
+            {transports.map((transport) => (
+              <FareInfo transport={transport} key={transport.id}></FareInfo>
+            ))}
           </div>
         </div>
         <div className="map-area p-4 col-md-6">

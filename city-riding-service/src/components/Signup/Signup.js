@@ -19,8 +19,6 @@ const Signup = () => {
     cPassword: "",
     errorMsg: "",
   });
-  let pass = "";
-  let cPass = "";
 
   const handleBlur = (e) => {
     let isFieldValid = true;
