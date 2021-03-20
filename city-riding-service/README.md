@@ -1,6 +1,6 @@
 # City Riding Service 
 
-A react project for ride sharing
+A react project that can be as ride sharing application.
 
 ---
 ## Live site ⚡
@@ -9,10 +9,13 @@ A react project for ride sharing
 
 ## Features ✔
 
-- #### 
+- #### Can login
 
 
-- #### 
+- #### Can select transport medium
+
+
+- #### Can see riding fare
 
 
 ##
