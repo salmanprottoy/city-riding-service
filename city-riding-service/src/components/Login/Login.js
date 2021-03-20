@@ -8,8 +8,16 @@ import { useHistory, useLocation } from "react-router";
 import { faGoogle, faFacebook } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const Login = () => {
+  const [user, setUser] = useState({
+    name: "",
+    email: "",
+    password: "",
+    errorMsg: "",
+  });
+
   const [loggerInUser, setLoggedInUser] = useContext(UserContext);
   const history = useHistory();
   const location = useLocation();
@@ -58,10 +66,53 @@ const Login = () => {
         console.log(errorCode, errorMessage, email, credential);
       });
   };
+  const handleBlur = (e) => {
+    const newUser = { ...user };
+    newUser[e.target.name] = e.target.value;
+    setUser(newUser);
+  };
+
+  const upadateUserName = (name) => {
+    var userProfile = firebase.auth().currentUser;
+    console.log("user profile", userProfile);
+    userProfile
+      .updateProfile({
+        displayName: name,
+      })
+      .then(function () {
+        console.log("user name updated successfully", userProfile);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
+  const handleSubmit = (e) => {
+    if (user.email && user.password) {
+      firebase
+        .auth()
+        .signInWithEmailAndPassword(user.email, user.password)
+        .then((res) => {
+          const newUser = { ...user };
+          newUser.errorMsg = "";
+          setUser(newUser);
+          setLoggedInUser(newUser);
+          history.replace(from);
+        })
+        .catch((error) => {
+          const newUser = { ...user };
+          newUser.errorMsg = error.message;
+          setUser(newUser);
+        });
+    }
+    e.preventDefault();
+  };
   return (
     <div className="login">
       <div className="container" style={{ width: "30rem" }}>
-        <form action="" className="border border-info p-3 m-5 rounded">
+        <form
+          onSubmit={() => handleSubmit()}
+          className="border border-info p-3 m-5 rounded"
+        >
           <h3 className="text-center text-info">Login</h3>
           <div className="form-group">
             <input
@@ -70,6 +121,7 @@ const Login = () => {
               placeholder="Email"
               style={{ width: "18rem" }}
               required
+              onBlur={handleBlur}
             />
           </div>
           <div className="form-group">
@@ -79,6 +131,7 @@ const Login = () => {
               placeholder="Password"
               style={{ width: "18rem" }}
               required
+              onBlur={handleBlur}
             />
           </div>
           <div className="form-check">

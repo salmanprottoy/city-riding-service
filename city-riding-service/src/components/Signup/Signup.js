@@ -1,32 +1,68 @@
 import React from "react";
+import firebase from "firebase/app";
+import "firebase/auth";
+import firebaseConfig from "./firebase.config";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Signup = () => {
-  let name = "";
-  let email = "";
+  if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+  } else {
+    firebase.app();
+  }
+  const [user, setUser] = useState({
+    isSignedIn: false,
+    name: "",
+    email: "",
+    password: "",
+    cPassword: "",
+    errorMsg: "",
+  });
   let pass = "";
   let cPass = "";
-  let errorMsg = "";
 
   const handleBlur = (e) => {
-    console.log(e.target.name, e.target.value);
+    let isFieldValid = true;
     if (e.target.name === "name") {
-      name = e.target.value;
     }
     if (e.target.name === "email") {
-      email = e.target.value;
+      isFieldValid = /\S+@\S+\.\S+/.test(e.target.value);
+      console.log(isFieldValid);
     }
     if (e.target.name === "password") {
-      pass = e.target.value;
+      const inPasswordValid = e.target.value.length >= 6;
+      const isPasswordHasNumber = /\d{1}/.test(e.target.value);
+      isFieldValid = inPasswordValid && isPasswordHasNumber;
+      console.log(isFieldValid);
     }
     if (e.target.name === "confirmPassword") {
-      cPass = e.target.value;
+    }
+    if (isFieldValid) {
+      const newUser = { ...user };
+      newUser[e.target.name] = e.target.value;
+      setUser(newUser);
     }
   };
-  if (pass !== cPass) {
-    errorMsg = "password doesn't matched!";
-  }
-  const handleSubmit = () => {};
+
+  const handleSubmit = (e) => {
+    if (user.email && user.password) {
+      firebase
+        .auth()
+        .createUserWithEmailAndPassword(user.email, user.password)
+        .then((res) => {
+          const newUser = { ...user };
+          newUser.errorMsg = "";
+          setUser(newUser);
+        })
+        .catch((error) => {
+          const newUser = { ...user };
+          newUser.errorMsg = error.message;
+          setUser(newUser);
+        });
+    }
+    e.preventDefault();
+  };
   return (
     <div>
       <div className="container" style={{ width: "30rem" }}>
@@ -74,15 +110,21 @@ const Signup = () => {
               required
               onBlur={handleBlur}
             />
-            <small>{errorMsg}</small>
+            <small>{}</small>
           </div>
-          <button type="submit" class="btn btn-info" style={{ width: "18rem" }}>
+          <button
+            type="submit"
+            class="btn btn-info"
+            style={{ width: "18rem" }}
+            onClick={handleSubmit}
+          >
             Signup
           </button>
           <small>
             Already have an account? <Link to="/login"> click here </Link>{" "}
           </small>
         </form>
+        <small className="text-danger">{user.errorMsg}</small>
       </div>
     </div>
   );
