@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "title": "Bile",
+    "img": "https://i.ibb.co/GM6Hr3H/Frame.png",
+    "price_1": 27,
+    "price_2": 27,
+    "price_3": 27
+  },
+  {
+    "id": 2,
+    "title": "Car",
+    "img": "https://i.ibb.co/L5tHFhK/Frame-2.png",
+    "price_1": 35,
+    "price_2": 70,
+    "price_3": 90
+  },
+  {
+    "id": 3,
+    "title": "Bus",
+    "img": "https://i.ibb.co/SmD8Dqc/Frame-1.png",
+    "price_1": 20,
+    "price_2": 40,
+    "price_3": 60
+  },
+  {
+    "id": 4,
+    "title": "Train",
+    "img": "https://i.ibb.co/8jm5Zn9/Group.png",
+    "price_1": 25,
+    "price_2": 50,
+    "price_3": 70
+  }
+]

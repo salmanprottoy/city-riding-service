@@ -1,18 +1,20 @@
 import React from "react";
 import Transport from "../Transport/Transport";
-import bike from "../../img/bike.png";
-import car from "../../img/car.png";
-import bus from "../../img/bus.png";
-import train from "../../img/train.png";
+import data from "../../data/data.json";
+import { useState } from "react";
+import { useEffect } from "react";
 
 const Transports = () => {
+  const [transports, setTransports] = useState([]);
+  useEffect(() => {
+    setTransports(data);
+  }, []);
   return (
     <div className="transports m-5">
       <div className="row row-cols-md-4 justify-content-center p-5">
-        <Transport title={"Bike"} img={bike}></Transport>
-        <Transport title={"Car"} img={car}></Transport>
-        <Transport title={"Bus"} img={bus}></Transport>
-        <Transport title={"Train"} img={train}></Transport>
+        {transports.map((transport) => (
+          <Transport transport={transport} key={transport.id}></Transport>
+        ))}
       </div>
     </div>
   );

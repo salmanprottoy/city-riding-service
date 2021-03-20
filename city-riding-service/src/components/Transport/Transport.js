@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 
 const Transport = (props) => {
@@ -16,12 +15,12 @@ const Transport = (props) => {
       >
         <img
           class="card-img-top p-4"
-          src={props.img}
+          src={props.transport.img}
           style={{ width: "16rem" }}
           alt=""
         />
         <div class="card-body">
-          <h5 class="card-title">{props.title}</h5>
+          <h5 class="card-title">{props.transport.title}</h5>
         </div>
       </div>
     </div>
