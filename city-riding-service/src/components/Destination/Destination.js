@@ -14,17 +14,17 @@ const center = {
 };
 
 const Destination = () => {
-  const { vehicle } = useParams();
+  let pickFrom = "";
+  let pickTo = "";
   let showFareInfo = false;
+
+  const { vehicle } = useParams();
+
   const [transports, setTransports] = useState([]);
+
   useEffect(() => {
     setTransports(data);
   }, []);
-
-  const handleSearch = () => {
-    console.log("Searching");
-    showFareInfo = true;
-  };
 
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
@@ -43,20 +43,37 @@ const Destination = () => {
     setMap(null);
   }, []);
 
+  const handleBlur = (e) => {
+    if (e.target.name === "pickFrom") {
+      pickFrom = e.target.value;
+    }
+    if (e.target.name === "pickTo") {
+      pickTo = e.target.value;
+    }
+  };
+
+  const handleSearch = () => {
+    console.log(pickFrom + " To " + pickTo);
+    showFareInfo = !showFareInfo;
+    console.log(showFareInfo);
+  };
+
   return (
     <div className="container">
       <div className="row d-flex justify-content-between align-items-center m-5 rounded">
         <div className="map-selector p-4 col-md-6 text-left">
-          <div className="form-group">
-            <label>Pick From</label>
-            <br />
-            <input type="text" required />
-          </div>
-          <div className="form-group">
-            <label>Pick To</label>
-            <br />
-            <input type="text" required />
-          </div>
+          <form>
+            <div className="form-group">
+              <label>Pick From</label>
+              <br />
+              <input type="text" required name="pickFrom" onBlur={handleBlur} />
+            </div>
+            <div className="form-group">
+              <label>Pick To</label>
+              <br />
+              <input type="text" required name="pickTo" onBlur={handleBlur} />
+            </div>
+          </form>
           <div>
             <button
               className="btn btn-info"
