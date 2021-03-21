@@ -12,6 +12,9 @@ A react project that can be as ride sharing application.
 - #### Can login
 
 
+- #### Can signup
+
+
 - #### Can select transport medium
 
 
