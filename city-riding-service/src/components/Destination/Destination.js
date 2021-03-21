@@ -6,7 +6,7 @@ import { useParams } from "react-router";
 
 const containerStyle = {
   width: "100%",
-  height: "50rem",
+  height: "23rem",
 };
 const center = {
   lat: 22.418944172990752,
