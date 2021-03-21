@@ -23,7 +23,7 @@ const Header = () => {
               </Link>
             </Nav.Link>
             <Nav.Link href="#pricing">
-              <Link class="nav-link" to="/destination">
+              <Link class="nav-link" to="/destination/Bike">
                 Destination
               </Link>
             </Nav.Link>

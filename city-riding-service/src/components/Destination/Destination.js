@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { GoogleMap, useJsApiLoader } from "@react-google-maps/api";
 import data from "../../data/data.json";
 import FareInfo from "../FareInfo/FareInfo";
+import { useParams } from "react-router";
 
 const containerStyle = {
   width: "100%",
@@ -13,6 +14,7 @@ const center = {
 };
 
 const Destination = () => {
+  const { vehicle } = useParams();
   let showFareInfo = false;
   const [transports, setTransports] = useState([]);
   useEffect(() => {
@@ -65,9 +67,12 @@ const Destination = () => {
             </button>
           </div>
           <div>
-            {transports.map((transport) => (
-              <FareInfo transport={transport} key={transport.id}></FareInfo>
-            ))}
+            {transports.map(
+              (transport) =>
+                transport.title === vehicle && (
+                  <FareInfo transport={transport} key={transport.id}></FareInfo>
+                )
+            )}
           </div>
         </div>
         <div className="map-area p-4 col-md-6">
