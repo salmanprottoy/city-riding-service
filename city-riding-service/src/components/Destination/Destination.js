@@ -4,8 +4,8 @@ import data from "../../data/data.json";
 import FareInfo from "../FareInfo/FareInfo";
 
 const containerStyle = {
-  width: "90vh",
-  height: "85vh",
+  width: "100%",
+  height: "50rem",
 };
 const center = {
   lat: 22.418944172990752,
@@ -48,17 +48,17 @@ const Destination = () => {
           <div className="form-group">
             <label>Pick From</label>
             <br />
-            <input type="text" style={{ width: "20rem" }} required />
+            <input type="text" style={{ width: "16rem" }} required />
           </div>
           <div className="form-group">
             <label>Pick To</label>
             <br />
-            <input type="text" style={{ width: "20rem" }} required />
+            <input type="text" style={{ width: "16rem" }} required />
           </div>
           <div>
             <button
               className="btn btn-info"
-              style={{ width: "20rem" }}
+              style={{ width: "16rem" }}
               onClick={handleSearch}
             >
               Search

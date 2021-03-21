@@ -63,7 +63,7 @@ const Signup = () => {
   };
   return (
     <div>
-      <div className="container" style={{ width: "30rem" }}>
+      <div className="container">
         <form
           className="border border-info p-3 m-5 rounded"
           onSubmit={() => handleSubmit()}
@@ -74,7 +74,7 @@ const Signup = () => {
               type="text"
               name="name"
               placeholder="Name"
-              style={{ width: "18rem" }}
+              style={{ width: "15rem" }}
               required
               onBlur={handleBlur}
             />
@@ -84,7 +84,7 @@ const Signup = () => {
               type="email"
               name="email"
               placeholder="Email"
-              style={{ width: "18rem" }}
+              style={{ width: "15rem" }}
               required
               onBlur={handleBlur}
             />
@@ -94,7 +94,7 @@ const Signup = () => {
               type="password"
               name="password"
               placeholder="Password"
-              style={{ width: "18rem" }}
+              style={{ width: "15rem" }}
               required
               onBlur={handleBlur}
             />
@@ -104,7 +104,7 @@ const Signup = () => {
               type="password"
               name="confirmPassword"
               placeholder="Confirm Password"
-              style={{ width: "18rem" }}
+              style={{ width: "15rem" }}
               required
               onBlur={handleBlur}
             />
@@ -113,11 +113,12 @@ const Signup = () => {
           <button
             type="submit"
             class="btn btn-info"
-            style={{ width: "18rem" }}
+            style={{ width: "15rem" }}
             onClick={handleSubmit}
           >
             Signup
           </button>
+          <br/>
           <small>
             Already have an account? <Link to="/login"> click here </Link>{" "}
           </small>

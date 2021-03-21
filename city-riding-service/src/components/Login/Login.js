@@ -108,7 +108,7 @@ const Login = () => {
   };
   return (
     <div className="login">
-      <div className="container" style={{ width: "30rem" }}>
+      <div className="container">
         <form
           onSubmit={() => handleSubmit()}
           className="border border-info p-3 m-5 rounded"
@@ -119,7 +119,7 @@ const Login = () => {
               type="email"
               name="email"
               placeholder="Email"
-              style={{ width: "18rem" }}
+              style={{ width: "15rem" }}
               required
               onBlur={handleBlur}
             />
@@ -129,7 +129,7 @@ const Login = () => {
               type="password"
               name="password"
               placeholder="Password"
-              style={{ width: "18rem" }}
+              style={{ width: "15rem" }}
               required
               onBlur={handleBlur}
             />
@@ -147,10 +147,11 @@ const Login = () => {
           <button
             type="submit"
             className="btn btn-info m-2"
-            style={{ width: "18rem" }}
+            style={{ width: "15rem" }}
           >
             Login
           </button>
+          <br/>
           <small>
             Don't have an account? <Link to="/signup"> click here </Link>{" "}
           </small>
