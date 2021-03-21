@@ -111,7 +111,7 @@ const Login = () => {
       <div className="container">
         <form
           onSubmit={() => handleSubmit()}
-          className="border border-info p-3 m-5 rounded"
+          className="border border-info p-3 m-2 rounded"
         >
           <h3 className="text-center text-info">Login</h3>
           <div className="form-group">
@@ -119,7 +119,6 @@ const Login = () => {
               type="email"
               name="email"
               placeholder="Email"
-              style={{ width: "15rem" }}
               required
               onBlur={handleBlur}
             />
@@ -129,7 +128,6 @@ const Login = () => {
               type="password"
               name="password"
               placeholder="Password"
-              style={{ width: "15rem" }}
               required
               onBlur={handleBlur}
             />
@@ -147,33 +145,33 @@ const Login = () => {
           <button
             type="submit"
             className="btn btn-info m-2"
-            style={{ width: "15rem" }}
+            style={{ width: "12rem" }}
           >
             Login
           </button>
-          <br/>
+          <br />
           <small>
             Don't have an account? <Link to="/signup"> click here </Link>{" "}
           </small>
         </form>
       </div>
       <hr />
-      <div className="container p-3">
+      <div className="container p-1">
         <button
-          className="btn btn-success m-2 text-left"
-          style={{ width: "18rem" }}
+          className="btn btn-success m-1 text-left"
+          style={{ width: "16rem" }}
           onClick={handleGoogleSignIn}
         >
-          <FontAwesomeIcon className="mr-5" icon={faGoogle} /> Connect with
+          <FontAwesomeIcon className="mr-3" icon={faGoogle} /> Connect with
           Google
         </button>
         <br />
         <button
-          className="btn btn-primary m-2 text-left"
-          style={{ width: "18rem" }}
+          className="btn btn-primary m-1 text-left"
+          style={{ width: "16rem" }}
           onClick={handleFacebookSignIn}
         >
-          <FontAwesomeIcon className="mr-5" icon={faFacebook} /> Connect with
+          <FontAwesomeIcon className="mr-3" icon={faFacebook} /> Connect with
           Facebook
         </button>
       </div>

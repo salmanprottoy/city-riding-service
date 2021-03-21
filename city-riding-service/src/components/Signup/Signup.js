@@ -65,7 +65,7 @@ const Signup = () => {
     <div>
       <div className="container">
         <form
-          className="border border-info p-3 m-5 rounded"
+          className="border border-info p-3 m-2 rounded"
           onSubmit={() => handleSubmit()}
         >
           <h3 className="text-center text-info">Signup</h3>
@@ -74,7 +74,6 @@ const Signup = () => {
               type="text"
               name="name"
               placeholder="Name"
-              style={{ width: "15rem" }}
               required
               onBlur={handleBlur}
             />
@@ -84,7 +83,6 @@ const Signup = () => {
               type="email"
               name="email"
               placeholder="Email"
-              style={{ width: "15rem" }}
               required
               onBlur={handleBlur}
             />
@@ -94,7 +92,6 @@ const Signup = () => {
               type="password"
               name="password"
               placeholder="Password"
-              style={{ width: "15rem" }}
               required
               onBlur={handleBlur}
             />
@@ -104,7 +101,6 @@ const Signup = () => {
               type="password"
               name="confirmPassword"
               placeholder="Confirm Password"
-              style={{ width: "15rem" }}
               required
               onBlur={handleBlur}
             />
@@ -113,12 +109,12 @@ const Signup = () => {
           <button
             type="submit"
             class="btn btn-info"
-            style={{ width: "15rem" }}
+            style={{ width: "12rem" }}
             onClick={handleSubmit}
           >
             Signup
           </button>
-          <br/>
+          <br />
           <small>
             Already have an account? <Link to="/login"> click here </Link>{" "}
           </small>

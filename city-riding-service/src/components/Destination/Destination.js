@@ -48,17 +48,17 @@ const Destination = () => {
           <div className="form-group">
             <label>Pick From</label>
             <br />
-            <input type="text" style={{ width: "16rem" }} required />
+            <input type="text" required />
           </div>
           <div className="form-group">
             <label>Pick To</label>
             <br />
-            <input type="text" style={{ width: "16rem" }} required />
+            <input type="text" required />
           </div>
           <div>
             <button
               className="btn btn-info"
-              style={{ width: "16rem" }}
+              style={{ width: "12rem" }}
               onClick={handleSearch}
             >
               Search
