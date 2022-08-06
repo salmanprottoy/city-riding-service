@@ -20,5 +20,4 @@ A react project that can be as ride sharing application.
 
 - #### Can see riding fare
 
-
 ##
